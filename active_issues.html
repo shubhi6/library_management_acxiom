@@ -1,0 +1,27 @@
+<!-- templates/active_issues.html -->
+{% extends "base.html" %}
+{% block title %}Active Issues{% endblock %}
+
+{% block content %}
+<h1>Active Issues</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Transaction ID</th>
+            <th>Book Title</th>
+            <th>User</th>
+            <th>Issue Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.id }}</td>
+                <td>{{ transaction.title }}</td>
+                <td>{{ transaction.username }}</td>
+                <td>{{ transaction.issue_date }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

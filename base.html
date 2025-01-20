@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Library Management System{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/admin_dashboard">Admin Dashboard</a>
+            <a href="/user_dashboard">User Dashboard</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+        <!-- templates/base.html -->
+<nav>
+    <ul>
+        <li><a href="{{ url_for('search_books') }}">Search Books</a></li>
+        <li><a href="{{ url_for('issue_book') }}">Issue Book</a></li>
+        <li><a href="{{ url_for('return_book') }}">Return Book</a></li>
+    </ul>
+</nav>
+
+    </main>
+    <footer>
+        <p>&copy; 2025 Library Management System</p>
+    </footer>
+</body>
+</html>

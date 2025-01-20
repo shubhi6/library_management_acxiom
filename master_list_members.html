@@ -1,0 +1,25 @@
+<!-- templates/master_list_members.html -->
+{% extends "base.html" %}
+{% block title %}Master List of Members{% endblock %}
+
+{% block content %}
+<h1>Master List of Members</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
